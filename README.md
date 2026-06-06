@@ -78,12 +78,50 @@ nav button{border:0;background:white;padding:8px;font-size:11px}
 </div>
 </section>
 
+<section id="emergency" class="page">
+  <div class="card">
+    <h2>Emergency</h2>
+    <p class="small">旅行中にすぐ確認する緊急情報</p>
+  </div>
+
+  <div class="card">
+    <h2>緊急番号</h2>
+    <p><b>Malaysia Emergency:</b> 999</p>
+    <p><b>Singapore Police:</b> 999</p>
+    <p><b>Singapore Ambulance / Fire:</b> 995</p>
+    <a class="btn" href="tel:999">Call 999</a>
+  </div>
+
+  <div class="card">
+    <h2>病院・クリニック</h2>
+    <p><b>Hospital Kota Tinggi</b><br>Desaru周辺の主要病院候補</p>
+    <a class="btn" href="https://www.google.com/maps/search/Hospital+Kota+Tinggi" target="_blank">Google Maps</a>
+
+    <p><b>Desaru Medical Clinic</b><br>軽い体調不良時の候補</p>
+    <a class="btn" href="https://www.google.com/maps/search/Desaru+Medical+Clinic" target="_blank">Google Maps</a>
+  </div>
+
+  <div class="card">
+    <h2>旅行メモ</h2>
+    <p><b>Flight Booking Ref:</b> V77DMI</p>
+    <p><b>Travel Insurance:</b> 後で保険会社・証券番号を入力</p>
+    <p><b>Passport Copies:</b> 写真・PDFをオフライン保存</p>
+  </div>
+
+  <div class="card">
+    <h2>大使館</h2>
+    <p><b>Embassy of Japan in Singapore</b></p>
+    <a class="btn" href="https://www.google.com/maps/search/Embassy+of+Japan+in+Singapore" target="_blank">Google Maps</a>
+  </div>
+</section>
+
 <nav>
 <button onclick="show('home')">🏠<br>Home</button>
 <button onclick="show('plan')">📅<br>Plan</button>
 <button onclick="show('booking')">✈️<br>Book</button>
 <button onclick="show('map')">📍<br>Map</button>
 <button onclick="show('pack')">🎒<br>Pack</button>
+<button onclick="show('emergency')">🚑<br>SOS</button>
 </nav>
 
 <script>
