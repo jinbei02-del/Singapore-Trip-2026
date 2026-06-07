@@ -66,12 +66,6 @@ Paradox Singapore Merchant Court チェックイン
 クラークキー周辺散策<br>
 夕食
 
-<a class="btn"
-href="https://www.google.com/maps/search/Kota+Tinggi+Fruit+Farm"
-target="_blank">
-Fruit Farm
-</a>
-
 </p>
 </div>
 
@@ -107,8 +101,18 @@ Bishanでピザ、テレビ
 シンガポール出発<br>
 ↓<br>
 Kota Tinggi Fruit Farm<br>
+  
+  <a class="btn"
+href="https://www.google.com/maps/search/Kota+Tinggi+Fruit+Farm"
+target="_blank">
+Fruit Farm
+</a>
+  
 ↓<br>
 Desaru チェックイン
+
+↓<br>
+Pasar Malam候補
 </p>
 </div>
 
@@ -117,7 +121,19 @@ Desaru チェックイン
 <p>
 Desaru Beach<br>
 River Cruise<br>
-Pasar Malam候補
+<a class="btn"
+href="https://maps.app.goo.gl/FgjWDtsKGbLoQu586?g_st=ic"
+target="_blank">
+JungleWallaTour
+</a>
+
+Firefly<br>
+<a class="btn"
+href="https://dff.world/product/fireflies-cruise-in-desaru/"
+target="_blank">
+Firefly
+</a>
+
 </p>
 </div>
 
