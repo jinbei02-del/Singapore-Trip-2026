@@ -43,7 +43,22 @@ nav button{border:0;background:white;padding:8px;font-size:11px}
 </section>
 
 <section id="plan" class="page">
-<div class="card"><h2>8/6</h2><p>15:50 KIX → SIN Scoot TR821<br>21:25 Singapore到着<br>Paradox Singapore Merchant Court宿泊</p></div>
+<div class="card">
+
+<h2>8/6（木） Day 1</h2>
+
+<p>
+
+15:50 Scoot TR821 関空出発<br>
+
+21:25 シンガポール到着<br>
+
+Paradox Singapore Merchant Court チェックイン
+
+</p>
+
+</div>
+
 <div class="card"><h2>8/11</h2><p>Singapore出発 → Kota Tinggi Fruit Farm → Desaru Check-in</p></div>
 <div class="card"><h2>8/12</h2><p>Desaru Beach / River Cruise / Pasar Malam候補</p></div>
 <div class="card"><h2>8/13</h2><p>Desaru Resort Morning / Free Time</p></div>
