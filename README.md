@@ -59,10 +59,102 @@ Paradox Singapore Merchant Court チェックイン
 
 </div>
 
-<div class="card"><h2>8/11</h2><p>Singapore出発 → Kota Tinggi Fruit Farm → Desaru Check-in</p></div>
-<div class="card"><h2>8/12</h2><p>Desaru Beach / River Cruise / Pasar Malam候補</p></div>
-<div class="card"><h2>8/13</h2><p>Desaru Resort Morning / Free Time</p></div>
-<div class="card"><h2>8/19</h2><p>06:55 SIN → KIX Scoot TR820<br>14:35 Kansai到着</p></div>
+<div class="card">
+<h2>8/7（金） Day 2</h2>
+<p>
+シンガポール観光<br>
+クラークキー周辺散策<br>
+夕食
+
+<a class="btn"
+href="https://www.google.com/maps/search/Kota+Tinggi+Fruit+Farm"
+target="_blank">
+Fruit Farm
+</a>
+
+</p>
+</div>
+
+<div class="card">
+<h2>8/8（土） Day 3</h2>
+<p>
+自由行動<br>
+マリーナベイ周辺<br>
+ショッピング
+チェックアウト
+</p>
+</div>
+
+<div class="card">
+<h2>8/9（日） Day 4</h2>
+<p>
+独立記念日<br>
+Bishanでピザ、テレビ
+</p>
+</div>
+
+<div class="card">
+<h2>8/10（月） Day 5</h2>
+<p>
+餃子作り<br>
+荷物整理
+</p>
+</div>
+
+<div class="card">
+<h2>8/11（火） Day 6</h2>
+<p>
+シンガポール出発<br>
+↓<br>
+Kota Tinggi Fruit Farm<br>
+↓<br>
+Desaru チェックイン
+</p>
+</div>
+
+<div class="card">
+<h2>8/12（水） Day 7</h2>
+<p>
+Desaru Beach<br>
+River Cruise<br>
+Pasar Malam候補
+</p>
+</div>
+
+<div class="card">
+<h2>8/13（木） Day 8</h2>
+<p>
+リゾート滞在<br>
+プール・ビーチ<br>
+自由行動
+</p>
+</div>
+
+<div class="card">
+<h2>8/14〜8/18</h2>
+<p>
+未確定<br>
+今後追加
+</p>
+</div>
+
+<div class="card">
+<h2>8/14〜8/18</h2>
+<p>
+未確定<br>
+今後追加
+</p>
+</div>
+
+<div class="card">
+<h2>8/19（水） Day 14</h2>
+<p>
+04:30 空港へ<br>
+06:55 Scoot TR820 出発<br>
+14:35 関西空港到着
+</p>
+</div>
+
 </section>
 
 <section id="booking" class="page">
