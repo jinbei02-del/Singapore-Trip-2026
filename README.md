@@ -126,7 +126,7 @@ href="https://maps.app.goo.gl/FgjWDtsKGbLoQu586?g_st=ic"
 target="_blank">
 JungleWallaTour
 </a>
-
+<br>
 Firefly<br>
 <a class="btn"
 href="https://dff.world/product/fireflies-cruise-in-desaru/"
@@ -142,7 +142,7 @@ Firefly
 <p>
 リゾート滞在<br>
 プール・ビーチ<br>
-自由行動
+シンガポールに戻る
 </p>
 </div>
 
