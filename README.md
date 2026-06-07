@@ -115,6 +115,48 @@ nav button{border:0;background:white;padding:8px;font-size:11px}
   </div>
 </section>
 
+<section id="local" class="page">
+  <div class="card">
+    <h2>Local Info</h2>
+    <p class="small">現地で役立つ情報メモ</p>
+  </div>
+
+  <div class="card">
+    <h2>移動・国境越え</h2>
+    <p><b>Grab</b><br>Singapore / Malaysiaの移動で利用候補。</p>
+    <p><b>Singapore → Johor Bahru</b><br>朝早めの移動推奨。金曜夕方・祝日前後は混雑注意。</p>
+  </div>
+
+  <div class="card">
+    <h2>天気・服装</h2>
+    <p><b>August Weather</b><br>暑く湿度が高い。午後にスコールの可能性あり。</p>
+    <p><b>持ち物</b><br>帽子、水、日焼け止め、雨具、虫除け。</p>
+  </div>
+
+  <div class="card">
+    <h2>買い物・雨の日</h2>
+    <p><b>AEON Mall Tebrau City</b><br>雨の日や買い物の代替候補。</p>
+    <a class="btn" href="https://www.google.com/maps/search/AEON+Mall+Tebrau+City" target="_blank">Google Maps</a>
+
+    <p><b>Lotus's Kota Tinggi</b><br>飲み物・お菓子・日用品の補充候補。</p>
+    <a class="btn" href="https://www.google.com/maps/search/Lotus's+Kota+Tinggi" target="_blank">Google Maps</a>
+  </div>
+
+  <div class="card">
+    <h2>Desaru周辺</h2>
+    <p><b>Desaru Beach</b><br>水着、タオル、日焼け止めを持参。</p>
+    <p><b>Desaru River Cruise</b><br>夕方以降は虫除けがあると安心。</p>
+    <p><b>Pasar Malam Bandar Penawar</b><br>開催曜日・時間は直前確認。</p>
+  </div>
+
+  <div class="card">
+    <h2>子ども向けメモ</h2>
+    <p>・移動日はお菓子と水を多めに用意</p>
+    <p>・水遊び後の着替えを別袋で準備</p>
+    <p>・長距離移動用に動画・ゲーム・イヤホンを準備</p>
+  </div>
+</section>
+
 <nav>
 <button onclick="show('home')">🏠<br>Home</button>
 <button onclick="show('plan')">📅<br>Plan</button>
@@ -122,6 +164,7 @@ nav button{border:0;background:white;padding:8px;font-size:11px}
 <button onclick="show('map')">📍<br>Map</button>
 <button onclick="show('pack')">🎒<br>Pack</button>
 <button onclick="show('emergency')">🚑<br>SOS</button>
+<button onclick="show('local')">ℹ️<br>Local</button>
 </nav>
 
 <script>
