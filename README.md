@@ -28,14 +28,15 @@ nav button{border:0;background:white;padding:8px;font-size:11px}
 </header>
 
 <section id="home" class="page active">
+
 <div class="card">
-  <div class="card">
-  <h2>出発まで</h2>
-  <p style="font-size:28px;font-weight:bold;">
-    あと <span id="countdown">--</span> 日
-  </p>
-  <p class="small">出発日：2026年8月6日</p>
+<h2>出発まで</h2>
+<p style="font-size:28px;font-weight:bold;">
+  あと <span id="countdown">--</span> 日
+</p>
+<p class="small">出発日：2026年8月6日</p>
 </div>
+<div class="card">
 <h2>今日の確認</h2>
 <p>フライト予約番号：<b>V77DMI</b></p>
 <p>緊急番号：Malaysia 999 / Singapore 999・995</p>
