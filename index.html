@@ -71,8 +71,7 @@ Departure in <span id="countdown">--</span> Days
 <hr>
 
 <p><b>✈ Next Event</b><br>
-8/6 15:50<br>
-Scoot TR821 関空出発
+<span id="nextEvent">Loading...</span>
 </p>
 
 <p><b>📍 Current Location</b><br>
@@ -556,6 +555,50 @@ function updateTripStatus(){
   }
 }
 
+function updateNextEvent(){
+  var today = new Date();
+  today.setHours(0,0,0,0);
+
+  var nextEvent = document.getElementById("nextEvent");
+  if(!nextEvent){
+    return;
+  }
+
+  var tripStart = new Date(2026,7,6);
+  var desaruMove = new Date(2026,7,11);
+  var desaruDay = new Date(2026,7,12);
+  var returnSingapore = new Date(2026,7,13);
+  var finalFlight = new Date(2026,7,19);
+
+  tripStart.setHours(0,0,0,0);
+  desaruMove.setHours(0,0,0,0);
+  desaruDay.setHours(0,0,0,0);
+  returnSingapore.setHours(0,0,0,0);
+  finalFlight.setHours(0,0,0,0);
+
+  if(today < tripStart){
+    nextEvent.innerHTML = "8/6 15:50<br>Scoot TR821 関空出発";
+  }
+  else if(today < desaruMove){
+    nextEvent.innerHTML = "8/11<br>Singapore → Kota Tinggi → Desaru";
+  }
+  else if(today < desaruDay){
+    nextEvent.innerHTML = "8/12<br>Desaru Beach / River Cruise / Firefly";
+  }
+  else if(today < returnSingapore){
+    nextEvent.innerHTML = "8/13<br>Desaru → Singapore";
+  }
+  else if(today < finalFlight){
+    nextEvent.innerHTML = "8/19 06:55<br>Scoot TR820 Singapore → Osaka";
+  }
+  else if(today.getTime() === finalFlight.getTime()){
+    nextEvent.innerHTML = "Today 06:55<br>Scoot TR820 Singapore → Osaka";
+  }
+  else{
+    nextEvent.innerHTML = "Trip Completed";
+  }
+}
+
 function updateHotelButton(){
   var today = new Date();
   today.setHours(0,0,0,0);
@@ -585,6 +628,7 @@ function initApp(){
   updateTodayPlan();
   updateTripStatus();
   updateHotelButton();
+  updateNextEvent();
 }
 
 initApp();
