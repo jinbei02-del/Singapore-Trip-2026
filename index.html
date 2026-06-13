@@ -49,6 +49,12 @@ nav button{border:0;background:white;padding:8px;font-size:11px}
 Departure in <span id="countdown">--</span> Days
 </p>
 
+<div class="card">
+<h2>Today's Plan</h2>
+<div id="todayPlan">
+<p>読み込み中...</p>
+</div>
+</div>
 </div>
 
 <div class="card">
@@ -341,7 +347,7 @@ function show(id){
 }
 
 function updateCountdown(){
-  var departure = new Date(2026, 7, 6); 
+  var departure = new Date(2026, 7, 6);
   var today = new Date();
 
   departure.setHours(0,0,0,0);
@@ -356,8 +362,42 @@ function updateCountdown(){
   }
 }
 
+function updateTodayPlan(){
+  var plans = {
+    "2026-08-06": "✈ 15:50 Scoot TR821 関空出発<br>🇸🇬 21:25 シンガポール到着<br>🏨 Paradox Singapore Merchant Court チェックイン",
+    "2026-08-07": "🇸🇬 シンガポール観光<br>🚶 クラークキー周辺散策<br>🍽 夕食",
+    "2026-08-08": "🛍 自由行動<br>🌃 マリーナベイ周辺<br>🏨 Paradox Singapore チェックアウト",
+    "2026-08-09": "🇸🇬 独立記念日<br>🍕 Bishanでピザ<br>📺 テレビ・家族時間",
+    "2026-08-10": "🥟 餃子作り<br>🎒 荷物整理<br>🚗 Desaru移動準備",
+    "2026-08-11": "🚗 シンガポール出発<br>🍍 Kota Tinggi Fruit Farm<br>🏨 Desaruチェックイン<br>🌙 Pasar Malam候補",
+    "2026-08-12": "🏖 Desaru Beach<br>🛥 River Cruise<br>✨ Firefly Tour",
+    "2026-08-13": "🏖 リゾート滞在<br>🏊 プール・ビーチ<br>🚗 シンガポールに戻る",
+    "2026-08-19": "✈ 04:30 空港へ<br>🛫 06:55 Scoot TR820 出発<br>🛬 14:35 関西空港到着"
+  };
+
+  var today = new Date();
+  var yyyy = today.getFullYear();
+  var mm = String(today.getMonth() + 1).padStart(2, "0");
+  var dd = String(today.getDate()).padStart(2, "0");
+  var key = yyyy + "-" + mm + "-" + dd;
+
+  var todayPlan = document.getElementById("todayPlan");
+
+  if(todayPlan){
+    if(plans[key]){
+      todayPlan.innerHTML = "<p>" + plans[key] + "</p>";
+    } else {
+      todayPlan.innerHTML = "<p>旅行前または予定未登録の日です。</p><p class='small'>Planタブで全体予定を確認してください。</p>";
+    }
+  }
+}
+
 updateCountdown();
-window.onload = updateCountdown;
+updateTodayPlan();
+window.onload = function(){
+  updateCountdown();
+  updateTodayPlan();
+};
 </script>
 
 </body>
