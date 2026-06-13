@@ -298,6 +298,20 @@ Firefly
 <button onclick="show('local')">ℹ️<br>Local</button>
 </nav>
 
+function updateCountdown() {
+  const departure = new Date("2026-08-06T00:00:00+09:00");
+  const today = new Date();
+  const diff = departure - today;
+  const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+
+  const countdown = document.getElementById("countdown");
+  if (countdown) {
+    countdown.textContent = days >= 0 ? days : "出発済み";
+  }
+}
+
+updateCountdown();
+
 <script>
 function show(id){
 document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
