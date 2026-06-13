@@ -1,4 +1,4 @@
-# Singapore-Trip-2026
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -312,10 +312,18 @@ Firefly
 <button onclick="show('local')">ℹ️<br>Local</button>
 </nav>
 
+<script>
+<script>
+function show(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
 function updateCountdown() {
   const departure = new Date("2026-08-06T00:00:00+09:00");
   const today = new Date();
-  const diff = departure - today;
+  const diff = departure.getTime() - today.getTime();
   const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
 
   const countdown = document.getElementById("countdown");
@@ -324,14 +332,19 @@ function updateCountdown() {
   }
 }
 
-updateCountdown();
+document.addEventListener("DOMContentLoaded", function () {
+  updateCountdown();
 
-<script>
-function show(id){
-document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-window.scrollTo(0,0);
-}
+  document.querySelectorAll('input[data-pack]').forEach(function (box) {
+    const key = "pack_" + box.dataset.pack;
+    box.checked = localStorage.getItem(key) === "true";
+
+    box.addEventListener("change", function () {
+      localStorage.setItem(key, box.checked);
+    });
+  });
+});
+</script>
 </script>
 
 </body>
