@@ -358,7 +358,13 @@ function updateCountdown(){
 
   var countdown = document.getElementById("countdown");
   if(countdown){
-    countdown.innerHTML = days >= 0 ? days : "出発済み";
+    if(days > 0){
+      countdown.innerHTML = days;
+    } else if(days === 0){
+      countdown.innerHTML = "Today";
+    } else {
+      countdown.innerHTML = "Started";
+    }
   }
 }
 
@@ -376,6 +382,14 @@ function updateTodayPlan(){
   };
 
   var today = new Date();
+  today.setHours(0,0,0,0);
+
+  var departure = new Date(2026, 7, 6);
+  departure.setHours(0,0,0,0);
+
+  var endDate = new Date(2026, 7, 19);
+  endDate.setHours(0,0,0,0);
+
   var yyyy = today.getFullYear();
   var mm = String(today.getMonth() + 1).padStart(2, "0");
   var dd = String(today.getDate()).padStart(2, "0");
@@ -384,16 +398,31 @@ function updateTodayPlan(){
   var todayPlan = document.getElementById("todayPlan");
 
   if(todayPlan){
-    if(plans[key]){
-      todayPlan.innerHTML = "<p>" + plans[key] + "</p>";
+    if(today < departure){
+      todayPlan.innerHTML =
+        "<h3>Next Event</h3>" +
+        "<p><b>✈ 8/6 15:50</b><br>Scoot TR821 関空出発</p>" +
+        "<p class='small'>旅行前は次の重要イベントを表示します。</p>";
+    } else if(today > endDate){
+      todayPlan.innerHTML =
+        "<h3>Trip Completed</h3>" +
+        "<p>お疲れ様でした！</p>";
+    } else if(plans[key]){
+      todayPlan.innerHTML =
+        "<h3>Today's Plan</h3>" +
+        "<p>" + plans[key] + "</p>";
     } else {
-      todayPlan.innerHTML = "<p>旅行前または予定未登録の日です。</p><p class='small'>Planタブで全体予定を確認してください。</p>";
+      todayPlan.innerHTML =
+        "<h3>Today's Plan</h3>" +
+        "<p>今日は予定未登録の日です。</p>" +
+        "<p class='small'>Planタブで全体予定を確認してください。</p>";
     }
   }
 }
 
 updateCountdown();
 updateTodayPlan();
+
 window.onload = function(){
   updateCountdown();
   updateTodayPlan();
