@@ -32,6 +32,24 @@ nav{position:fixed;bottom:0;left:0;right:0;background:white;display:grid;grid-te
 nav button{border:0;background:white;padding:8px;font-size:11px}
 .page{display:none}
 .page.active{display:block}
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.quick-btn{
+  display:block;
+  background:#2563eb;
+  color:white;
+  text-decoration:none;
+  text-align:center;
+  padding:14px 8px;
+  border-radius:12px;
+  font-weight:600;
+}
+
 </style>
 </head>
 <body>
@@ -111,62 +129,51 @@ target="_blank">
 <div class="card">
 <h2>🚀 Quick Links</h2>
 
-<p>
-<a class="btn"
+<div class="quick-grid">
+
+<a class="quick-btn"
 href="https://www.grab.com/sg/"
 target="_blank">
-🚕 Grab
+🚕<br>Grab
 </a>
-</p>
 
-<p>
-<a class="btn"
+<a class="quick-btn"
 href="https://www.google.com/maps/search/Paradox+Singapore+Merchant+Court"
 target="_blank">
-🏨 Hotel
+🏨<br>Hotel
 </a>
-</p>
 
-<p>
-<a class="btn"
+<a class="quick-btn"
 href="https://www.google.com/maps/search/Kota+Tinggi+Fruit+Farm"
 target="_blank">
-🍍 Fruit Farm
+🍍<br>Fruit Farm
 </a>
-</p>
 
-<p>
-<a class="btn"
+<a class="quick-btn"
 href="https://www.google.com/maps/search/Desaru+Beach"
 target="_blank">
-🏖 Desaru Beach
+🏖<br>Desaru Beach
 </a>
-</p>
 
-<p>
-<a class="btn"
+<a class="quick-btn"
 href="https://www.flyscoot.com/"
 target="_blank">
-✈️ Scoot
+✈️<br>Scoot
 </a>
-</p>
 
-<p>
-<a class="btn"
+<a class="quick-btn"
 href="https://www.google.com/search?q=1+SGD+to+JPY"
 target="_blank">
-💱 SGD → JPY
+💱<br>SGD→JPY
 </a>
-</p>
 
-<p>
-<a class="btn"
+<a class="quick-btn"
 href="https://www.google.com/search?q=1+MYR+to+JPY"
 target="_blank">
-💱 MYR → JPY
+💱<br>MYR→JPY
 </a>
-</p>
 
+</div>
 </div>
 
 </section>
