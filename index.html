@@ -75,6 +75,18 @@ Departure in <span id="countdown">--</span> Days
 Scoot TR821 関空出発
 </p>
 
+<p><b>📍 Current Location</b><br>
+<span id="currentLocation">Loading...</span>
+</p>
+
+<p><b>🏨 Current Hotel</b><br>
+<span id="currentHotel">Loading...</span>
+</p>
+
+<p><b>🚗 Next Move</b><br>
+<span id="nextMove">Loading...</span>
+</p>
+
 <p><b>🔖 Booking Ref</b><br>
 V77DMI
 </p>
@@ -438,6 +450,61 @@ function show(id){
 }
 
 function updateHotelButton(){
+  
+  function updateTripStatus(){
+
+  var today = new Date();
+  today.setHours(0,0,0,0);
+
+  var location = document.getElementById("currentLocation");
+  var hotel = document.getElementById("currentHotel");
+  var nextMove = document.getElementById("nextMove");
+
+  if(!location || !hotel || !nextMove){
+    return;
+  }
+
+  var tripStart = new Date(2026,7,6);
+  var desaruStart = new Date(2026,7,11);
+  var desaruEnd = new Date(2026,7,13);
+  var tripEnd = new Date(2026,7,19);
+
+  if(today < tripStart){
+
+    location.innerHTML = "Japan";
+    hotel.innerHTML = "Not Yet";
+    nextMove.innerHTML = "Depart for Singapore (8/6)";
+
+  }
+  else if(today < desaruStart){
+
+    location.innerHTML = "Singapore";
+    hotel.innerHTML = "Paradox Singapore Merchant Court";
+    nextMove.innerHTML = "Move to Desaru (8/11)";
+
+  }
+  else if(today <= desaruEnd){
+
+    location.innerHTML = "Desaru";
+    hotel.innerHTML = "Tiara Desaru Seaview Residence";
+    nextMove.innerHTML = "Return to Singapore (8/13)";
+
+  }
+  else if(today <= tripEnd){
+
+    location.innerHTML = "Singapore";
+    hotel.innerHTML = "Singapore Stay";
+    nextMove.innerHTML = "Flight to Osaka (8/19)";
+
+  }
+  else{
+
+    location.innerHTML = "Japan";
+    hotel.innerHTML = "-";
+    nextMove.innerHTML = "Trip Completed";
+
+  }
+}
 
   var today = new Date();
   today.setHours(0,0,0,0);
@@ -547,6 +614,7 @@ function updateTodayPlan(){
 updateCountdown();
 updateTodayPlan();
 updateHotelButton();
+updateTripStatus();
 
 window.onload = function(){
   updateCountdown();
