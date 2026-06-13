@@ -395,32 +395,24 @@ function updateTodayPlan(){
   var dd = String(today.getDate()).padStart(2, "0");
   var key = yyyy + "-" + mm + "-" + dd;
 
+  var todayCard = document.getElementById("todayCard");
+  var todayTitle = document.getElementById("todayTitle");
   var todayPlan = document.getElementById("todayPlan");
 
-  if(todayPlan){
-    if(today < departure){
+  if(todayCard && todayTitle && todayPlan){
+    if(today >= departure && today <= endDate){
+      todayCard.style.display = "block";
+      todayTitle.innerHTML = "Today's Plan";
 
-  document.getElementById("todayTitle").innerHTML = "Next Event";
-
-  todayPlan.innerHTML =
-    "<p><b>✈ 8/6 15:50</b><br>Scoot TR821 関空出発</p>" +
-    "<p class='small'>旅行前は次の重要イベントを表示します。</p>";
-      todayPlan.innerHTML =
-        "<p><b>✈ 8/6 15:50</b><br>Scoot TR821 関空出発</p>" +
-        "<p class='small'>旅行前は次の重要イベントを表示します。</p>";
-    } else if(today > endDate){
-      todayPlan.innerHTML =
-        "<h3>Trip Completed</h3>" +
-        "<p>お疲れ様でした！</p>";
-    } else if(plans[key]){
-      todayPlan.innerHTML =
-        "<h3>Today's Plan</h3>" +
-        "<p>" + plans[key] + "</p>";
+      if(plans[key]){
+        todayPlan.innerHTML = "<p>" + plans[key] + "</p>";
+      } else {
+        todayPlan.innerHTML =
+          "<p>今日は予定未登録の日です。</p>" +
+          "<p class='small'>Planタブで全体予定を確認してください。</p>";
+      }
     } else {
-      todayPlan.innerHTML =
-        "<h3>Today's Plan</h3>" +
-        "<p>今日は予定未登録の日です。</p>" +
-        "<p class='small'>Planタブで全体予定を確認してください。</p>";
+      todayCard.style.display = "none";
     }
   }
 }
