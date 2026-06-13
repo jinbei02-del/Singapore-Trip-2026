@@ -137,8 +137,10 @@ target="_blank">
 🚕<br>Grab
 </a>
 
-<a class="quick-btn"
-href="https://www.google.com/maps/search/Paradox+Singapore+Merchant+Court"
+<a
+id="hotelButton"
+class="quick-btn"
+href="#"
 target="_blank">
 🏨<br>Hotel
 </a>
@@ -435,6 +437,42 @@ function show(id){
   window.scrollTo(0,0);
 }
 
+function updateHotelButton(){
+
+  var today = new Date();
+  today.setHours(0,0,0,0);
+
+  var hotelButton = document.getElementById("hotelButton");
+
+  if(!hotelButton){
+    return;
+  }
+
+  var desaruStart = new Date(2026,7,11);
+  var desaruEnd   = new Date(2026,7,13);
+
+  desaruStart.setHours(0,0,0,0);
+  desaruEnd.setHours(23,59,59,999);
+
+  if(today >= desaruStart && today <= desaruEnd){
+
+    hotelButton.href =
+    "https://www.guestreservations.com/tiara-desaru-seaview-residence/booking";
+
+    hotelButton.innerHTML =
+    "🏨<br>Tiara Desaru";
+
+  } else {
+
+    hotelButton.href =
+    "https://www.google.com/maps/search/Paradox+Singapore+Merchant+Court";
+
+    hotelButton.innerHTML =
+    "🏨<br>Paradox";
+
+  }
+}
+
 function updateCountdown(){
   var departure = new Date(2026, 7, 6);
   var today = new Date();
@@ -508,6 +546,7 @@ function updateTodayPlan(){
 
 updateCountdown();
 updateTodayPlan();
+updateHotelButton();
 
 window.onload = function(){
   updateCountdown();
