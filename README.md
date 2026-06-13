@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Singapore Malaysia Family Trip 2026</title>
+<title>🇸🇬 Singapore & Malaysia Family Trip 2026</title>
 <style>
 body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin:0;background:#f5f7fb;color:#222;padding-bottom:70px}
 header{
