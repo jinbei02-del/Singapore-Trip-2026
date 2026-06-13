@@ -449,58 +449,6 @@ function show(id){
   window.scrollTo(0,0);
 }
 
-function updateHotelButton(){
-  
-function updateTripStatus(){
-
-  var today = new Date();
-  today.setHours(0,0,0,0);
-
-  var location = document.getElementById("currentLocation");
-  var hotel = document.getElementById("currentHotel");
-  var nextMove = document.getElementById("nextMove");
-
-  if(!location || !hotel || !nextMove){
-    return;
-  }
-
-  var tripStart = new Date(2026,7,6);
-  var desaruStart = new Date(2026,7,11);
-  var desaruEnd = new Date(2026,7,13);
-  var tripEnd = new Date(2026,7,19);
-
-  if(today < tripStart){
-    location.innerHTML = "Japan";
-    hotel.innerHTML = "Not Yet";
-    nextMove.innerHTML = "Depart for Singapore (8/6)";
-  }
-  else if(today < desaruStart){
-    location.innerHTML = "Singapore";
-    hotel.innerHTML = "Paradox Singapore Merchant Court";
-    nextMove.innerHTML = "Move to Desaru (8/11)";
-  }
-  else if(today <= desaruEnd){
-    location.innerHTML = "Desaru";
-    hotel.innerHTML = "Tiara Desaru Seaview Residence";
-    nextMove.innerHTML = "Return to Singapore (8/13)";
-  }
-  else if(today <= tripEnd){
-    location.innerHTML = "Singapore";
-    hotel.innerHTML = "Singapore Stay";
-    nextMove.innerHTML = "Flight to Osaka (8/19)";
-  }
-  else{
-    location.innerHTML = "Japan";
-    hotel.innerHTML = "-";
-    nextMove.innerHTML = "Trip Completed";
-  }
-}
-
-function updateHotelButton(){
-
-
-}
-
 function updateCountdown(){
   var departure = new Date(2026, 7, 6);
   var today = new Date();
@@ -543,7 +491,7 @@ function updateTodayPlan(){
   departure.setHours(0,0,0,0);
 
   var endDate = new Date(2026, 7, 19);
-  endDate.setHours(0,0,0,0);
+  endDate.setHours(23,59,59,999);
 
   var yyyy = today.getFullYear();
   var mm = String(today.getMonth() + 1).padStart(2, "0");
@@ -572,17 +520,84 @@ function updateTodayPlan(){
   }
 }
 
-updateCountdown();
-updateTodayPlan();
-updateHotelButton();
-updateTripStatus();
+function updateTripStatus(){
+  var today = new Date();
+  today.setHours(0,0,0,0);
 
-window.onload = function(){
+  var location = document.getElementById("currentLocation");
+  var hotel = document.getElementById("currentHotel");
+  var nextMove = document.getElementById("nextMove");
+
+  if(!location || !hotel || !nextMove){
+    return;
+  }
+
+  var tripStart = new Date(2026,7,6);
+  var desaruStart = new Date(2026,7,11);
+  var desaruEnd = new Date(2026,7,13);
+  var tripEnd = new Date(2026,7,19);
+
+  tripStart.setHours(0,0,0,0);
+  desaruStart.setHours(0,0,0,0);
+  desaruEnd.setHours(23,59,59,999);
+  tripEnd.setHours(23,59,59,999);
+
+  if(today < tripStart){
+    location.innerHTML = "Japan";
+    hotel.innerHTML = "Not Yet";
+    nextMove.innerHTML = "Depart for Singapore (8/6)";
+  } else if(today < desaruStart){
+    location.innerHTML = "Singapore";
+    hotel.innerHTML = "Paradox Singapore Merchant Court";
+    nextMove.innerHTML = "Move to Desaru (8/11)";
+  } else if(today <= desaruEnd){
+    location.innerHTML = "Desaru";
+    hotel.innerHTML = "Tiara Desaru Seaview Residence";
+    nextMove.innerHTML = "Return to Singapore (8/13)";
+  } else if(today <= tripEnd){
+    location.innerHTML = "Singapore";
+    hotel.innerHTML = "Singapore Stay";
+    nextMove.innerHTML = "Flight to Osaka (8/19)";
+  } else {
+    location.innerHTML = "Japan";
+    hotel.innerHTML = "-";
+    nextMove.innerHTML = "Trip Completed";
+  }
+}
+
+function updateHotelButton(){
+  var today = new Date();
+  today.setHours(0,0,0,0);
+
+  var hotelButton = document.getElementById("hotelButton");
+  if(!hotelButton){
+    return;
+  }
+
+  var desaruStart = new Date(2026,7,11);
+  var desaruEnd = new Date(2026,7,13);
+
+  desaruStart.setHours(0,0,0,0);
+  desaruEnd.setHours(23,59,59,999);
+
+  if(today >= desaruStart && today <= desaruEnd){
+    hotelButton.href = "https://www.guestreservations.com/tiara-desaru-seaview-residence/booking";
+    hotelButton.innerHTML = "🏨<br>Tiara Desaru";
+  } else {
+    hotelButton.href = "https://www.google.com/maps/search/Paradox+Singapore+Merchant+Court";
+    hotelButton.innerHTML = "🏨<br>Paradox";
+  }
+}
+
+function initApp(){
   updateCountdown();
   updateTodayPlan();
-  updateHotelButton();
   updateTripStatus();
-};
+  updateHotelButton();
+}
+
+initApp();
+window.onload = initApp;
 </script>
 
 </body>
