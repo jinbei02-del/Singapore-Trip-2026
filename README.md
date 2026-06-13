@@ -7,7 +7,21 @@
 <title>Singapore Malaysia Family Trip 2026</title>
 <style>
 body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin:0;background:#f5f7fb;color:#222;padding-bottom:70px}
-header{background:#2563eb;color:white;padding:22px;border-radius:0 0 22px 22px}
+header{
+background:
+linear-gradient(
+rgba(0,0,0,0.35),
+rgba(0,0,0,0.35)
+),
+url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1600&q=80');
+
+background-size:cover;
+background-position:center;
+
+color:white;
+padding:40px 22px;
+border-radius:0 0 22px 22px;
+}
 h1{font-size:22px;margin:0}
 section{padding:14px}
 .card{background:white;border-radius:16px;padding:14px;margin:12px 0;box-shadow:0 4px 14px #0001}
